@@ -18,6 +18,7 @@
     "eslint-config-next": "16.1.6",
     "next": "16.1.6",
     "postcss": "8.5.6",
+    "prisma": "^7.3.0",
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "react-icons": "^5.5.0",
@@ -26,5 +27,9 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.18"
+  },
+  "overrides": {
+    "lodash": ">=4.17.23",
+    "hono": ">4.11.6"
   }
 }
