@@ -6,6 +6,7 @@ import { Theme, ThemePanel } from "@radix-ui/themes";
 import { Inter } from "next/font/google";
 import "./theme-config.css";
 
+
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
@@ -21,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={inter.variable} data-color-mode="light">
       <body>
         <Theme accentColor="purple" radius="large">
           <Navbar />
