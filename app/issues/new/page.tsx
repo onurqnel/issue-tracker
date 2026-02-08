@@ -1,19 +1,26 @@
 "use client";
 import { useState } from "react";
 import MDEditor from "@uiw/react-md-editor";
-import { TextField, Button, Callout } from "@radix-ui/themes";
+import { TextField, Button, Callout, Text } from "@radix-ui/themes";
 import { useForm, Controller } from "react-hook-form";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { validationSchema } from "../../validationSchema";
+import { z } from "zod";
 
-interface NewIssueForm {
-  title: string;
-  description: string;
-}
+type IssueForm = z.infer<typeof validationSchema>;
 
 const NewIssuePage = () => {
   const router = useRouter();
-  const { register, control, handleSubmit } = useForm<NewIssueForm>();
+  const {
+    register,
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<IssueForm>({
+    resolver: zodResolver(validationSchema),
+  });
   const [error, setError] = useState("");
 
   return (
@@ -35,11 +42,21 @@ const NewIssuePage = () => {
         })}
       >
         <TextField.Root placeholder="Title" {...register("title")} />
+        {errors.title && (
+          <Text color="red" as="p">
+            {errors.title.message}
+          </Text>
+        )}
         <Controller
           name="description"
           control={control}
           render={({ field }) => <MDEditor {...field} />}
         />
+        {errors.description && (
+          <Text color="red" as="p">
+            {errors.description.message}
+          </Text>
+        )}
         <Button>Submit New Issue</Button>
       </form>
     </div>
