@@ -1,8 +1,7 @@
-import React from "react";
 import { Button } from "@radix-ui/themes";
 import Link from "next/link";
 
-const IssueActions = () => {
+const NewIssueButton = () => {
   return (
     <div className="mb-5">
       <Button>
@@ -12,4 +11,4 @@ const IssueActions = () => {
   );
 };
 
-export default IssueActions;
+export default NewIssueButton;

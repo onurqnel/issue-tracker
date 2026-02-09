@@ -1,13 +1,13 @@
 import { Table } from "@radix-ui/themes";
 import Skeleton from "react-loading-skeleton";
-import IssueActions from "./IssueActions";
+import NewIssueButton from "./NewIssueButton";
 import "react-loading-skeleton/dist/skeleton.css";
 
-const loadingIssuesPage = () => {
+const LoadingTable = () => {
   const issues = [1, 2, 3, 4, 5];
   return (
     <div>
-      <IssueActions />
+      <NewIssueButton />
       <Table.Root variant="surface">
         <Table.Header>
           <Table.Row>
@@ -43,4 +43,4 @@ const loadingIssuesPage = () => {
   );
 };
 
-export default loadingIssuesPage;
+export default LoadingTable;
