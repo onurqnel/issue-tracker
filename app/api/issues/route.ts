@@ -1,6 +1,6 @@
+import { prisma } from "@/lib/prisma";
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
-import { prisma } from "@/lib/prisma";
 import { validationSchema } from "../../validationSchema";
 
 export async function GET() {

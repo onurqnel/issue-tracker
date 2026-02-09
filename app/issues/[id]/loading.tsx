@@ -1,7 +1,6 @@
-import { Card, Flex, Box } from '@radix-ui/themes'
-import Skeleton from 'react-loading-skeleton'
-import 'react-loading-skeleton/dist/skeleton.css'
-
+import { Box, Card, Flex } from "@radix-ui/themes";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 const LoadingIssueDetailPage = () => {
   return (
@@ -15,7 +14,7 @@ const LoadingIssueDetailPage = () => {
         <Skeleton count={3} />
       </Card>
     </Box>
-  )
-}
+  );
+};
 
-export default LoadingIssueDetailPage
+export default LoadingIssueDetailPage;

@@ -1,7 +1,7 @@
-import { prisma } from "@/lib/prisma";
-import { notFound } from "next/navigation";
-import { Heading, Text, Flex, Card } from "@radix-ui/themes";
 import StatusBadge from "@/app/components/StatusBadge";
+import { prisma } from "@/lib/prisma";
+import { Card, Flex, Heading, Text } from "@radix-ui/themes";
+import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 interface Props {
   params: Promise<{

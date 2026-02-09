@@ -1,9 +1,9 @@
 "use client";
 
-import Link from "next/link";
-import { LuBug } from "react-icons/lu";
-import { usePathname } from "next/navigation";
 import classNames from "classnames";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { LuBug } from "react-icons/lu";
 
 const Navbar = () => {
   const currentPath = usePathname();
@@ -25,7 +25,7 @@ const Navbar = () => {
               currentPath === link.href
                 ? "text-zinc-900 font-medium"
                 : "text-zinc-500",
-              "hover:text-zinc-800 transition-colors"
+              "hover:text-zinc-800 transition-colors",
             )}
             href={link.href}
           >
